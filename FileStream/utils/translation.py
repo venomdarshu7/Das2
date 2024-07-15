@@ -7,7 +7,7 @@ class LANG(object):
 <b>👋 Hᴇʏ, </b>{}\n 
 <b>I'ᴍ ᴛᴇʟᴇɢʀᴀᴍ ғɪʟᴇs sᴛʀᴇᴀᴍɪɴɢ ʙᴏᴛ ᴀs ᴡᴇʟʟ ᴅɪʀᴇᴄᴛ ʟɪɴᴋs ɢᴇɴᴇʀᴀᴛᴏʀ</b>\n
 <b>ᴡᴏʀᴋɪɴɢ ᴏɴ ᴄʜᴀɴɴᴇʟs ᴀɴᴅ ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛ</b>\n
-<b>💕 @{}</b>\n"""
+<b><blockquote>💕 @{}</b>\n</blockquote>"""
 
     HELP_TEXT = """
 <b>- ᴀᴅᴅ ᴍᴇ ᴀs ᴀɴ ᴀᴅᴍɪɴ ᴏɴ ᴛʜᴇ ᴄʜᴀɴɴᴇʟ</b>
@@ -45,27 +45,27 @@ class LANG(object):
 class BUTTON(object):
     START_BUTTONS = InlineKeyboardMarkup(
         [[
-            InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
-            InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about'),
-            InlineKeyboardButton('ᴄʟᴏsᴇ', callback_data='close')
+            InlineKeyboardButton('𝘏𝘦𝘭𝘱', callback_data='help'),
+            InlineKeyboardButton('𝘈𝘣𝘰𝘶𝘵', callback_data='about'),
+            InlineKeyboardButton('𝘊𝘭𝘰𝘴𝘦', callback_data='close')
         ],
             [InlineKeyboardButton("📢 ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ", url=f'https://t.me/{Telegram.UPDATES_CHANNEL}')]
         ]
     )
     HELP_BUTTONS = InlineKeyboardMarkup(
         [[
-            InlineKeyboardButton('ʜᴏᴍᴇ', callback_data='home'),
-            InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about'),
-            InlineKeyboardButton('ᴄʟᴏsᴇ', callback_data='close'),
+            InlineKeyboardButton('𝘏𝘰𝘮𝘦', callback_data='home'),
+            InlineKeyboardButton('𝘈𝘣𝘰𝘶𝘵', callback_data='about'),
+            InlineKeyboardButton('𝘊𝘭𝘰𝘴𝘦', callback_data='close'),
         ],
             [InlineKeyboardButton("📢 ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ", url=f'https://t.me/{Telegram.UPDATES_CHANNEL}')]
         ]
     )
     ABOUT_BUTTONS = InlineKeyboardMarkup(
         [[
-            InlineKeyboardButton('ʜᴏᴍᴇ', callback_data='home'),
-            InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
-            InlineKeyboardButton('ᴄʟᴏsᴇ', callback_data='close'),
+            InlineKeyboardButton('𝘏𝘰𝘮𝘦', callback_data='home'),
+            InlineKeyboardButton('𝘏𝘦𝘭𝘱', callback_data='help'),
+            InlineKeyboardButton('𝘊𝘭𝘰𝘴𝘦', callback_data='close'),
         ],
             [InlineKeyboardButton("📢 ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ", url=f'https://t.me/{Telegram.UPDATES_CHANNEL}')]
         ]

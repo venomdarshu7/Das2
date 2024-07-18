@@ -8,11 +8,34 @@ from FileStream.config import Telegram
 from FileStream.utils.database import Database
 from FileStream.utils.translation import LANG, BUTTON
 from pyrogram import filters, Client
+from random import choice
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from pyrogram.enums.parse_mode import ParseMode
 import asyncio
 
 db = Database(Telegram.DATABASE_URL, Telegram.SESSION_NAME)
+
+EMOJIS = [
+        "👍", "👎", "❤", "🔥", 
+        "🥰", "👏", "😁", "🤔",
+        "🤯", "😱", "🤬", "😢",
+        "🎉", "🤩", "🤮", "💩",
+        "🙏", "👌", "🕊", "🤡",
+        "🥱", "🥴", "😍", "🐳",
+        "❤‍🔥", "🌚", "🌭", "💯",
+        "🤣", "⚡", "🍌", "🏆",
+        "💔", "🤨", "😐", "🍓",
+        "🍾", "💋", "🖕", "😈",
+        "😴", "😭", "🤓", "👻",
+        "👨‍💻", "👀", "🎃", "🙈",
+        "😇", "😨", "🤝", "✍",
+        "🤗", "🫡", "🎅", "🎄",
+        "☃", "💅", "🤪", "🗿",
+        "🆒", "💘", "🙉", "🦄",
+        "😘", "💊", "🙊", "😎",
+        "👾", "🤷‍♂", "🤷", "🤷‍♀",
+        "😡"
+]
 
 @FileStream.on_message(filters.command('start') & filters.private)
 async def start(bot: Client, message: Message):
@@ -22,6 +45,7 @@ async def start(bot: Client, message: Message):
 
     if usr_cmd == "/start":
         if Telegram.START_PIC:
+            await message.react(choice(EMOJIS), big=True),
             await message.reply_photo(
                 photo=Telegram.START_PIC,
                 caption=LANG.START_TEXT.format(message.from_user.mention, FileStream.username),
@@ -29,6 +53,7 @@ async def start(bot: Client, message: Message):
                 reply_markup=BUTTON.START_BUTTONS
             )
         else:
+            await message.react(choice(EMOJIS), big=True),
             await message.reply_text(
                 text=LANG.START_TEXT.format(message.from_user.mention, FileStream.username),
                 parse_mode=ParseMode.HTML,
@@ -86,6 +111,7 @@ async def start(bot, message):
     if not await verify_user(bot, message):
         return
     if Telegram.START_PIC:
+        await message.react(choice(EMOJIS), big=True),
         await message.reply_photo(
             photo=Telegram.START_PIC,
             caption=LANG.ABOUT_TEXT.format(FileStream.fname, __version__),
@@ -93,6 +119,7 @@ async def start(bot, message):
             reply_markup=BUTTON.ABOUT_BUTTONS
         )
     else:
+        await message.react(choice(EMOJIS), big=True),
         await message.reply_text(
             text=LANG.ABOUT_TEXT.format(FileStream.fname, __version__),
             disable_web_page_preview=True,
@@ -104,6 +131,7 @@ async def help_handler(bot, message):
     if not await verify_user(bot, message):
         return
     if Telegram.START_PIC:
+        await message.react(choice(EMOJIS), big=True),
         await message.reply_photo(
             photo=Telegram.START_PIC,
             caption=LANG.HELP_TEXT.format(Telegram.OWNER_ID),
@@ -111,6 +139,7 @@ async def help_handler(bot, message):
             reply_markup=BUTTON.HELP_BUTTONS
         )
     else:
+        await message.react(choice(EMOJIS), big=True),
         await message.reply_text(
             text=LANG.HELP_TEXT.format(Telegram.OWNER_ID),
             parse_mode=ParseMode.HTML,

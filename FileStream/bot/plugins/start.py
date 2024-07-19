@@ -37,6 +37,9 @@ EMOJIS = [
         "😡"
 ]
 
+STICKERS_IDS = ('CAACAgUAAxkBAAJiEmZ9wGpouK36GTLvSNipAj1UJINmAAIzDwACMld5Vq_5dLIkZKbZNQQ CAACAgUAAxkBAAJiG2Z94C_lIJQ-gtK4FOsjDk3dXXL9AAKIDAACX3ZYV3POKhr3mXUINQQ CAACAgUAAxkBAAJiMGZ_I9m2qjeXD4YwSFbHVJmWQOoHAALeCgACARFYV-wqL2ZeqpL4NQQ CAACAgUAAxkBAAJiMWZ_I9q2WXd6XX8UcGIYNPAUneYbAAJ6DwACeD9QV2EoARqmyYFQNQQ CAACAgUAAxkBAAJiNmZ_I-Qv7KQ7zvg4Lg5tvTiYwv4OAAJUDQACUShRV4t4aj9xXS0BNQQ CAACAgUAAxkBAAJiOWZ_I-bvHq7iGOSuUmg7xWAWYbDNAAKfEgACza1hV6x0FsXrtM8nNQQ CAACAgUAAxkBAAJiZWaAcljRI_HeSqvdKbuJWXHbpe7-AAKFDQACnaNgVzof05wAAXDjsDUE CAACAgUAAxkBAAJiZmaAclnxPo_HPKA_R4NYKb05ulcFAALoCwACd4thV49b_Uqh3qhTNQQ CAACAgUAAxkBAAJia2aAclvYoXpWW0ezQPuvI1DOdoZIAAKSEQACiXRgVxPhb2AYPT6hNQQ CAACAgUAAxkBAAJibmaAcl_roqxZpIBP2ZoGXoT3eJzHAAJuDAACiX1gVwtjKqyQ6bTQNQQ CAACAgUAAxkBAAJidGaAcmKH0nYXxVaQPX1_xg5w6IraAAIQDAACAVxgV4yJyW3974W-NQQ CAACAgUAAxkBAAJid2aAcmXYEVIeoP_obaJ2dObRfb-vAAIvEAACbJRgV2LzAaS8DJ4ZNQQ CAACAgUAAxkBAAJieGaAcmjCRUX3-FcyKUxQySGcOqbrAAJQDQACunFgV6b_SvOa2Y7QNQQ CAACAgUAAxkBAAJifWaAcmjBn7DQD0iDFVzhUILnKNvkAAKgEAACwJ2hV8JWS9RpAzqsNQQ CAACAgUAAxkBAAJigGaAcmzgCFIDGDJJg_FOyiM8VTSoAAK8DQAC5XthV2Ar4vHaamOYNQQ').split()
+
+
 @FileStream.on_message(filters.command('start') & filters.private)
 async def start(bot: Client, message: Message):
     if not await verify_user(bot, message):
@@ -46,6 +49,9 @@ async def start(bot: Client, message: Message):
     if usr_cmd == "/start":
         if Telegram.START_PIC:
             await message.react(choice(EMOJIS), big=True),
+            m=await message.reply_sticker(sticker=random.choice(STICKERS_IDS))
+            await asyncio.sleep(0.5)
+            await m.delete()
             await message.reply_photo(
                 photo=Telegram.START_PIC,
                 caption=LANG.START_TEXT.format(message.from_user.mention, FileStream.username),
@@ -54,6 +60,9 @@ async def start(bot: Client, message: Message):
             )
         else:
             await message.react(choice(EMOJIS), big=True),
+            m=await message.reply_sticker(sticker=random.choice(STICKERS_IDS))
+            await asyncio.sleep(0.5)
+            await m.delete()
             await message.reply_text(
                 text=LANG.START_TEXT.format(message.from_user.mention, FileStream.username),
                 parse_mode=ParseMode.HTML,
@@ -112,6 +121,9 @@ async def start(bot, message):
         return
     if Telegram.START_PIC:
         await message.react(choice(EMOJIS), big=True),
+        m=await message.reply_sticker(sticker=random.choice(STICKERS_IDS))
+        await asyncio.sleep(0.5)
+        await m.delete()
         await message.reply_photo(
             photo=Telegram.START_PIC,
             caption=LANG.ABOUT_TEXT.format(FileStream.fname, __version__),
@@ -120,6 +132,9 @@ async def start(bot, message):
         )
     else:
         await message.react(choice(EMOJIS), big=True),
+        m=await message.reply_sticker(sticker=random.choice(STICKERS_IDS))
+        await asyncio.sleep(0.5)
+        await m.delete()
         await message.reply_text(
             text=LANG.ABOUT_TEXT.format(FileStream.fname, __version__),
             disable_web_page_preview=True,
@@ -132,6 +147,9 @@ async def help_handler(bot, message):
         return
     if Telegram.START_PIC:
         await message.react(choice(EMOJIS), big=True),
+        m=await message.reply_sticker(sticker=random.choice(STICKERS_IDS))
+        await asyncio.sleep(0.5)
+        await m.delete()
         await message.reply_photo(
             photo=Telegram.START_PIC,
             caption=LANG.HELP_TEXT.format(Telegram.OWNER_ID),
@@ -140,6 +158,9 @@ async def help_handler(bot, message):
         )
     else:
         await message.react(choice(EMOJIS), big=True),
+        m=await message.reply_sticker(sticker=random.choice(STICKERS_IDS))
+        await asyncio.sleep(0.5)
+        await m.delete()
         await message.reply_text(
             text=LANG.HELP_TEXT.format(Telegram.OWNER_ID),
             parse_mode=ParseMode.HTML,

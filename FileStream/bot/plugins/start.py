@@ -1,5 +1,6 @@
 import logging
 import math
+import random
 from FileStream import __version__
 from FileStream.bot import FileStream
 from FileStream.server.exceptions import FIleNotFound

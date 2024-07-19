@@ -4,10 +4,9 @@ from FileStream.config import Telegram
 class LANG(object):
 
     START_TEXT = """
-<b>👋 Hᴇʏ, </b>{}\n 
+<b><blockquote expandable>👋 Hᴇʏ, </b>{}\n 
 <b>I'ᴍ ᴛᴇʟᴇɢʀᴀᴍ ғɪʟᴇs sᴛʀᴇᴀᴍɪɴɢ ʙᴏᴛ ᴀs ᴡᴇʟʟ ᴅɪʀᴇᴄᴛ ʟɪɴᴋs ɢᴇɴᴇʀᴀᴛᴏʀ</b>\n
-<b>ᴡᴏʀᴋɪɴɢ ᴏɴ ᴄʜᴀɴɴᴇʟs ᴀɴᴅ ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛ</b>\n
-<b><blockquote>💕 @{}</b>\n</blockquote>"""
+<b>ᴡᴏʀᴋɪɴɢ ᴏɴ ᴄʜᴀɴɴᴇʟs ᴀɴᴅ ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛ</b></b></blockquote>"""
 
     HELP_TEXT = """
 <b>- ᴀᴅᴅ ᴍᴇ ᴀs ᴀɴ ᴀᴅᴍɪɴ ᴏɴ ᴛʜᴇ ᴄʜᴀɴɴᴇʟ</b>
@@ -17,10 +16,10 @@ class LANG(object):
 <i><b> ʀᴇᴘᴏʀᴛ ʙᴜɢs ᴛᴏ <a href='https://telegram.me/maddastbot'>ᴅᴇᴠᴇʟᴏᴘᴇʀ</a></b></i>"""
 
     ABOUT_TEXT = """
-<b>⚜ ᴍʏ ɴᴀᴍᴇ : {}</b>\n
+<b><i>⚜ ᴍʏ ɴᴀᴍᴇ : {}</b>\n
 <b>✦ ᴠᴇʀsɪᴏɴ : {}</b>
 <b>✦ ᴜᴘᴅᴀᴛᴇᴅ ᴏɴ : 06-January-2024</b>
-<b>✦ ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href='https://telegram.me/maddastbot'>The.punisheR</a></b>\n
+<b>✦ ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href='https://telegram.me/maddastbot'>The.punisheR</a></i></b>
 """
 
     STREAM_TEXT = """
@@ -45,27 +44,27 @@ class LANG(object):
 class BUTTON(object):
     START_BUTTONS = InlineKeyboardMarkup(
         [[
-            InlineKeyboardButton('𝘏𝘦𝘭𝘱', callback_data='help'),
-            InlineKeyboardButton('𝘈𝘣𝘰𝘶𝘵', callback_data='about'),
-            InlineKeyboardButton('𝘊𝘭𝘰𝘴𝘦', callback_data='close')
+            InlineKeyboardButton('𝘏𝘦𝘭𝘱 ‼️', callback_data='help'),
+            InlineKeyboardButton('𝘈𝘣𝘰𝘶𝘵 ⚜️', callback_data='about'),
+            InlineKeyboardButton('𝘊𝘭𝘰𝘴𝘦 🚶🏻‍♂️', callback_data='close')
         ],
             [InlineKeyboardButton("📢 ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ", url=f'https://t.me/{Telegram.UPDATES_CHANNEL}')]
         ]
     )
     HELP_BUTTONS = InlineKeyboardMarkup(
         [[
-            InlineKeyboardButton('𝘏𝘰𝘮𝘦', callback_data='home'),
-            InlineKeyboardButton('𝘈𝘣𝘰𝘶𝘵', callback_data='about'),
-            InlineKeyboardButton('𝘊𝘭𝘰𝘴𝘦', callback_data='close'),
+            InlineKeyboardButton('𝘏𝘰𝘮𝘦 🏡', callback_data='home'),
+            InlineKeyboardButton('𝘈𝘣𝘰𝘶𝘵 ⚜️', callback_data='about'),
+            InlineKeyboardButton('𝘊𝘭𝘰𝘴𝘦 🚶🏻‍♂️', callback_data='close'),
         ],
             [InlineKeyboardButton("📢 ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ", url=f'https://t.me/{Telegram.UPDATES_CHANNEL}')]
         ]
     )
     ABOUT_BUTTONS = InlineKeyboardMarkup(
         [[
-            InlineKeyboardButton('𝘏𝘰𝘮𝘦', callback_data='home'),
-            InlineKeyboardButton('𝘏𝘦𝘭𝘱', callback_data='help'),
-            InlineKeyboardButton('𝘊𝘭𝘰𝘴𝘦', callback_data='close'),
+            InlineKeyboardButton('𝘏𝘰𝘮𝘦 🏡', callback_data='home'),
+            InlineKeyboardButton('𝘏𝘦𝘭𝘱 ‼️', callback_data='help'),
+            InlineKeyboardButton('𝘊𝘭𝘰𝘴𝘦 🚶🏻‍♂️', callback_data='close'),
         ],
             [InlineKeyboardButton("📢 ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ", url=f'https://t.me/{Telegram.UPDATES_CHANNEL}')]
         ]

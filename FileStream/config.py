@@ -8,7 +8,7 @@ class Telegram:
     API_HASH = str(env.get("API_HASH", 'a6d015153068a35390a336fe0a38dd64'))
     BOT_TOKEN = str(env.get("BOT_TOKEN", '6472392988:AAFK95LuQV8dmMiuLtGgdW3lBr57V5Tn22g'))
     OWNER_ID = int(env.get('OWNER_ID', '6295967055'))
-    WORKERS = int(env.get("WORKERS", "6"))  # 6 workers = 6 commands at once
+    WORKERS = int(env.get("WORKERS", "3"))  # 6 workers = 6 commands at once
     DATABASE_URL = str(env.get('DATABASE_URL', 'mongodb+srv://das:darshu567@cluster0.mwgkkci.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'))
     UPDATES_CHANNEL = str(env.get('UPDATES_CHANNEL', "vdmoviez"))
     SESSION_NAME = str(env.get('SESSION_NAME', 'FileStream'))
@@ -27,13 +27,13 @@ class Telegram:
     AUTH_USERS = list(set(int(x) for x in str(env.get("AUTH_USERS", "")).split()))
 
 class Server:
-    PORT = int(env.get("PORT", 443))
+    PORT = int(env.get("PORT", 8080))
     BIND_ADDRESS = str(env.get("BIND_ADDRESS", "0.0.0.0"))
     PING_INTERVAL = int(env.get("PING_INTERVAL", "1200"))
     HAS_SSL = str(env.get("HAS_SSL", "0").lower()) in ("1", "true", "t", "yes", "y")
     NO_PORT = str(env.get("NO_PORT", "0").lower()) in ("1", "true", "t", "yes", "y")
     FQDN = str(env.get("FQDN", BIND_ADDRESS))
-    URL = "https://das-43tb.onrender.com/".format(
+    URL = "https://dasco-7ny8.onrender.com".format(
         "s" if HAS_SSL else "", FQDN, "" if NO_PORT else ":" + str(PORT)
     )
 
